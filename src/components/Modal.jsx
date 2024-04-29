@@ -16,7 +16,7 @@ function Modal({ open, children, onClose }) {
   return createPortal(
     //Need onClose prop here because when closing modal by pressyng Esc we can't open it again as the modalIsOpen state in the App component is still true
     <dialog className="modal" ref={dialog} onClose={onClose}>
-      {children}
+      {open && children}
     </dialog>,
     document.getElementById("modal")
   );
